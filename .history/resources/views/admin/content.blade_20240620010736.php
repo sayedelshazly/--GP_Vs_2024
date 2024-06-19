@@ -1,7 +1,7 @@
 <div class="container-xxl flex-grow-1 container-p-y">
     <div class="row">
         <div class="col-lg-8 mb-4 order-0">
-
+        
         </div>
         <div class="col-lg-4 col-md-4 order-1">
             <div class="row">
@@ -10,8 +10,8 @@
                         <div class="card-body">
                             <div class="card-title d-flex align-items-start justify-content-between">
                                 <div class="avatar flex-shrink-0">
-                                    <img src="AdminTemplate/assets/img/icons/unicons/chart-success.png"
-                                        alt="chart success" class="rounded" />
+                                    <img src="AdminTemplate/assets/img/icons/unicons/chart-success.png" alt="chart success"
+                                        class="rounded" />
                                 </div>
                                 <div class="dropdown">
                                     <button class="btn p-0" type="button" id="cardOpt3" data-bs-toggle="dropdown"
@@ -115,40 +115,38 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-
+                
 
     </div>
 
-    <!-- / Content -->
+<!-- / Content -->
 
-    <!-- Footer -->
-    <footer class="content-footer footer bg-footer-theme">
-        <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
-            <div class="mb-2 mb-md-0">
-                ©
-                <script>
-                    document.write(new Date().getFullYear());
-                </script>
-                , made with ❤️ by
-                <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
-            </div>
-            <div>
-                <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
-                <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>
-
-                <a href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
-                    target="_blank" class="footer-link me-4">Documentation</a>
-
-                <a href="https://github.com/themeselection/sneat-html-admin-template-free/issues" target="_blank"
-                    class="footer-link me-4">Support</a>
-            </div>
+<!-- Footer -->
+<footer class="content-footer footer bg-footer-theme">
+    <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
+        <div class="mb-2 mb-md-0">
+            ©
+            <script>
+                document.write(new Date().getFullYear());
+            </script>
+            , made with ❤️ by
+            <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
         </div>
-    </footer>
-    <!-- / Footer -->
+        <div>
+            <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
+            <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>
 
-    <div class="content-backdrop fade"></div>
+            <a href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/" target="_blank"
+                class="footer-link me-4">Documentation</a>
+
+            <a href="https://github.com/themeselection/sneat-html-admin-template-free/issues" target="_blank"
+                class="footer-link me-4">Support</a>
+        </div>
+    </div>
+</footer>
+<!-- / Footer -->
+
+<div class="content-backdrop fade"></div>
 </div>
 <!-- Content wrapper -->
 </div>

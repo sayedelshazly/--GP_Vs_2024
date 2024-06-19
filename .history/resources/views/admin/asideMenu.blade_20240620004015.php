@@ -126,12 +126,12 @@
         <!-- Components -->
         <li class="menu-header small text-uppercase"><span class="menu-header-text">Components</span></li>
         <!-- Cards -->
-        {{-- <li class="menu-item">
+        <li class="menu-item">
             <a href="cards-basic.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-collection"></i>
                 <div data-i18n="Basic">Cards</div>
             </a>
-        </li> --}}
+        </li>
         <!-- User interface -->
         <li class="menu-item">
             <a href="javascript:void(0)" class="menu-link menu-toggle">
@@ -257,12 +257,12 @@
             </ul>
         </li>
 
-        {{-- <li class="menu-item">
+        <li class="menu-item">
             <a href="icons-boxicons.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-crown"></i>
                 <div data-i18n="Boxicons">Boxicons</div>
             </a>
-        </li> --}}
+        </li>
 
         <!-- Forms & Tables -->
         {{-- <li class="menu-header small text-uppercase"><span class="menu-header-text">Forms &amp; Tables</span></li>
