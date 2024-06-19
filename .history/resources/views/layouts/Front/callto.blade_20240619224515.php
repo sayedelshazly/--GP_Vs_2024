@@ -1,6 +1,6 @@
 <section id="call-to-action" class="call-to-action section">
 
-    <img src="Arsha/assets/img/cta-bg.jpg" alt="">
+    <img src="Arshaassets/img/cta-bg.jpg" alt="">
 
     <div class="container">
 
