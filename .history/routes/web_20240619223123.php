@@ -19,7 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('home', [HomeController::class, 'home'])->name('home');
+Route::get('home', [HomeController::class, 'home']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
