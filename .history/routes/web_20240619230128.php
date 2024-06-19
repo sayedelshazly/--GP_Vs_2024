@@ -21,7 +21,7 @@ Route::get('/', function () {
 });
 
 Route::get('home', [HomeController::class, 'home'])->name('home');
-Route::get('admin', [AdminController::class, 'admin'])->name('admin');
+Route::get('admin', [AdminController::class, 'admin'])->name('home');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
