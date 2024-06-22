@@ -45,8 +45,8 @@ class HomeController extends Controller
 
         $user = Auth()->user(); //---[call the user table]
         $userId = $user->id;
-        $userName = $user->name;
-        $usertype = $user->usertype;
+        $usertype = $user->user;
+        $userId = $user->id;
 
         $post = new Post;
         $post->title = $request->title;
@@ -58,10 +58,6 @@ class HomeController extends Controller
             $image->move('postImages', $imageName);
             $post->image = $imageName;
         }
-        $post->user_id = $userId;
-        $post->name = $userName;
-        $post->usertype = $usertype;
-        $post->post_status = 'pending';
         $post->save();
         return redirect()->back();
     }

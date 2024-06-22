@@ -19,7 +19,7 @@
                             class="bi bi-chevron-down toggle-dropdown"></i></a>
                     <ul>
                         <li><a href="{{url('showAllPosts')}}">All Posts</a></li>
-                        <li><a href="{{url('create_post')}}">Create Post</a></li>
+                        <li><a href="{{}}">Create Post</a></li>
                         <li><a href="#">My Posts</a></li>
                         <li><a href="#">Dropdown 4</a></li>
                     </ul>

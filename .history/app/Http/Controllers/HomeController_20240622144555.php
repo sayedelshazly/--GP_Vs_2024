@@ -60,8 +60,7 @@ class HomeController extends Controller
         }
         $post->user_id = $userId;
         $post->name = $userName;
-        $post->usertype = $usertype;
-        $post->post_status = 'pending';
+        $post->usertype = 
         $post->save();
         return redirect()->back();
     }

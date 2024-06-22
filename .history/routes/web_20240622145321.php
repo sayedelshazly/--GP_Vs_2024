@@ -21,7 +21,7 @@ Route::get('showAllPosts', [HomeController::class, 'showAllPosts'] );
 Route::get('showOnePost/{id}', [HomeController::class, 'showOnePost'] );
 // user create post
 Route::get('create_post', [HomeController::class, 'create_post'])->middleware('auth');
-Route::post('user_post', [HomeController::class, 'user_post'])->middleware('auth');
+Route::post('user_post', [HomeController::class, 'user_post'] );
 
 
 

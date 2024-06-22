@@ -42,27 +42,9 @@ class HomeController extends Controller
         return view('layouts.Front.user.create_post');
     }
     public function user_post(Request $request){
-
-        $user = Auth()->user(); //---[call the user table]
-        $userId = $user->id;
-        $userName = $user->name;
-        $usertype = $user->usertype;
-
         $post = new Post;
         $post->title = $request->title;
         $post->description = $request->description;
-
-        $image = $request->image;
-        if($image){ //---Error 1
-            $imageName = time() . '.' . $image->getClientOriginalExtension();
-            $image->move('postImages', $imageName);
-            $post->image = $imageName;
-        }
-        $post->user_id = $userId;
-        $post->name = $userName;
-        $post->usertype = $usertype;
-        $post->post_status = 'pending';
-        $post->save();
-        return redirect()->back();
+        $post = 
     }
 }

@@ -11,6 +11,7 @@
             <ul>
                 <li><a href="{{url('/')}}" class="">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="">Posts</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#team">Team</a></li>
@@ -19,7 +20,7 @@
                             class="bi bi-chevron-down toggle-dropdown"></i></a>
                     <ul>
                         <li><a href="{{url('showAllPosts')}}">All Posts</a></li>
-                        <li><a href="{{url('create_post')}}">Create Post</a></li>
+                        <li><a href="#">Create Post</a></li>
                         <li><a href="#">My Posts</a></li>
                         <li><a href="#">Dropdown 4</a></li>
                     </ul>

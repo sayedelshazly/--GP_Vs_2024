@@ -58,10 +58,7 @@ class HomeController extends Controller
             $image->move('postImages', $imageName);
             $post->image = $imageName;
         }
-        $post->user_id = $userId;
-        $post->name = $userName;
-        $post->usertype = $usertype;
-        $post->post_status = 'pending';
+        $post->
         $post->save();
         return redirect()->back();
     }
