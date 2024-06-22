@@ -49,7 +49,6 @@
                                             <th>Status</th>
                                             <th>Images</th>
                                             <th>Actions</th>
-                                            <th>Post Status</th>
                                         </tr>
                                     </thead>
 
@@ -82,9 +81,9 @@
                                                     </button>
                                                 </form>
                                             </td>
-                                            <td class="">
-                                                <a class="btn btn-success" href="{{url('accept_user_post', $post->id)}}">Accept</a>
-                                                <a class="btn btn-secondary" href="{{url('reject_user_post', $post->id)}}">Reject</a>
+                                            <td class="d-flex justify-content-start">
+                                                <a href="{{url('accept_user_post', $post->id)}}">Accept</a>
+                                                <a href="{{url('reject_user_post', $post->id)}}">Reject</a>
                                             </td>
                                         </tr>
                                     </tbody>

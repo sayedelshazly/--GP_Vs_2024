@@ -11,7 +11,7 @@ class HomeController extends Controller
     public function index(){
 
         if(Auth::id()){
-            $posts = Post::latest()->take(3)->where('post_status', 'active')->get(); //--Error 2
+            $posts = Post::latest()->take(3)->where('post_status')->get(); //--Error 2
             $usertype = Auth()->user()->usertype;
 
             if($usertype == 'user'){
@@ -27,11 +27,11 @@ class HomeController extends Controller
     }
 
     public function showAllPosts(){
-        $posts = Post::where('post_status', 'active')->get();
+        $posts = Post::all();
         return view('layouts.Front.allPosts', compact('posts'));
     }
     public function home(){
-        $posts = Post::latest()->take(3)->where('post_status', 'active')->get();
+        $posts = Post::latest()->take(3)->get();
         return view('layouts.Front.home', compact('posts'));
     }
     public function showOnePost($id){
@@ -68,7 +68,7 @@ class HomeController extends Controller
     public function user_allPosts(){
         $user = Auth()->user();
         $userId = $user->id;
-        $posts_user = Post::where('user_id', $userId)->where('post_status', 'active')->get();
+        $posts_user = Post::where('user_id', $userId)->get();
         return view('layouts.Front.user.user_allPosts', compact('posts_user'));
     }
     public function user_onePost($id){

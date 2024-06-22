@@ -4,6 +4,7 @@
     data-template="vertical-menu-template-free">
 
 <head>
+    <base href="/public">
     @include('admin.head')
 </head>
 
@@ -82,8 +83,8 @@
                                                     </button>
                                                 </form>
                                             </td>
-                                            <td class="">
-                                                <a class="btn btn-success" href="{{url('accept_user_post', $post->id)}}">Accept</a>
+                                            <td>
+                                                
                                                 <a class="btn btn-secondary" href="{{url('reject_user_post', $post->id)}}">Reject</a>
                                             </td>
                                         </tr>

@@ -76,7 +76,7 @@ class AdminController extends Controller
     }
     public function reject_user_post($id){
         $post = Post::findOrFail($id);
-        $post->post_status = 'pending';
+        $post->post_status = 'active';
         $post->save();
 
         return redirect()->back();

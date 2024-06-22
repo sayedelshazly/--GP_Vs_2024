@@ -82,7 +82,7 @@
                                                     </button>
                                                 </form>
                                             </td>
-                                            <td class="">
+                                            <td class="d-flex justify-content-start">
                                                 <a class="btn btn-success" href="{{url('accept_user_post', $post->id)}}">Accept</a>
                                                 <a class="btn btn-secondary" href="{{url('reject_user_post', $post->id)}}">Reject</a>
                                             </td>

@@ -52,5 +52,4 @@ Route::delete('delete_post/{id}', [AdminController::class, 'delete_post']);
 Route::get('accept_user_post/{id}', [AdminController::class, 'accept_user_post']);
 Route::get('reject_user_post/{id}', [AdminController::class, 'reject_user_post']);
 
-
 require __DIR__.'/auth.php';
