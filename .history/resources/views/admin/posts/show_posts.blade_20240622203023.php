@@ -25,15 +25,9 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true"></button>
                 </div>
                 @endif
-                @if (session()->has('status_accept'))
-                <div class="alert alert-success d-flex justify-content-between">
-                    {{session()->get('status_accept')}}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true"></button>
-                </div>
-                @endif
-                @if (session()->has('status_reject'))
-                <div class="alert alert-secondary d-flex justify-content-between">
-                    {{session()->get('status_reject')}}
+                @if (session()->has('message'))
+                <div class="alert alert-danger d-flex justify-content-between">
+                    {{session()->get('message')}}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true"></button>
                 </div>
                 @endif

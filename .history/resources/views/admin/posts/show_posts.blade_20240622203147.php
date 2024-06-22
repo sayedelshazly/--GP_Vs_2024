@@ -26,13 +26,13 @@
                 </div>
                 @endif
                 @if (session()->has('status_accept'))
-                <div class="alert alert-success d-flex justify-content-between">
+                <div class="alert alert-info d-flex justify-content-between">
                     {{session()->get('status_accept')}}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true"></button>
                 </div>
                 @endif
                 @if (session()->has('status_reject'))
-                <div class="alert alert-secondary d-flex justify-content-between">
+                <div class="alert alert-info d-flex justify-content-between">
                     {{session()->get('status_reject')}}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true"></button>
                 </div>

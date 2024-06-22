@@ -63,7 +63,7 @@ class HomeController extends Controller
         $post->usertype = $usertype;
         $post->post_status = 'pending';
         $post->save();
-        return redirect()->back()->with('message', 'Post Created Successfully!');
+        return redirect()->back()->;
     }
     public function user_allPosts(){
         $user = Auth()->user();
@@ -97,6 +97,6 @@ class HomeController extends Controller
 
         $posts->save();
 
-        return redirect()->back()->with('message', 'Post Updated Successfully!');
+        return redirect()->back();
     }
 }

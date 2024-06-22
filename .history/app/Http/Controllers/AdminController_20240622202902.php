@@ -72,13 +72,13 @@ class AdminController extends Controller
         $post->post_status = 'active';
         $post->save();
 
-        return redirect()->back()->with('status_accept', 'Post Accepted');
+        return redirect()->back()->with('message', 'Post Accepted');
     }
     public function reject_user_post($id){
         $post = Post::findOrFail($id);
         $post->post_status = 'pending';
         $post->save();
 
-        return redirect()->back()->with('status_reject', 'Post Rejected');
+        return redirect()->back();
     }
 }

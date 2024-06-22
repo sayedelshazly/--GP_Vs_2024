@@ -95,7 +95,7 @@
                                                 </form>
                                             </td>
                                             <td class="">
-                                                <a class="btn btn-success" href="{{url('accept_user_post', $post->id)}}">Accept</a>
+                                                <a class="btn btn-success" href="{{url('accept_user_post', $post->id)}}"><i class="bi bi-x-circle-fill"></i></a>
                                                 <a class="btn btn-secondary" href="{{url('reject_user_post', $post->id)}}">Reject</a>
                                             </td>
                                         </tr>

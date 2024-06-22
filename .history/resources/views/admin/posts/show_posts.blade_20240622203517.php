@@ -37,7 +37,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true"></button>
                 </div>
                 @endif
-                
+
                 @include('admin.navbar')
 
                 <!-- / Navbar -->
@@ -95,8 +95,13 @@
                                                 </form>
                                             </td>
                                             <td class="">
-                                                <a class="btn btn-success" href="{{url('accept_user_post', $post->id)}}">Accept</a>
-                                                <a class="btn btn-secondary" href="{{url('reject_user_post', $post->id)}}">Reject</a>
+                                                <button class="btn btn-success">
+                                                    <a href="{{url('accept_user_post', $post->id)}}"><i
+                                                            class="bi bi-0-circle"></i></a>
+
+                                                </button>
+                                                <a class="btn btn-secondary"
+                                                    href="{{url('reject_user_post', $post->id)}}">Reject</a>
                                             </td>
                                         </tr>
                                     </tbody>

@@ -7,16 +7,11 @@
 
 <body class="index-page">
 
-    
     {{--Header --}}
     @include('layouts.Front.header')
     @include('layouts.Front.singlePage')
-    @if (session()->has('message'))
-    <div class="alert alert-success d-flex justify-content-between">
-        {{session()->get('message')}}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true"></button>
-    </div>
-    @endif
+    class="btn btn-success"
+
     <section id="#" class="services section">
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">

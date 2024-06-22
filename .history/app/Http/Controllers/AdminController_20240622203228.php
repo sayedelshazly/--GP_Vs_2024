@@ -79,6 +79,6 @@ class AdminController extends Controller
         $post->post_status = 'pending';
         $post->save();
 
-        return redirect()->back()->with('status_reject', 'Post Rejected');
+        return redirect()->back()->with('status_re', 'Post Rejected');
     }
 }
