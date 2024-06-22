@@ -80,23 +80,6 @@ class HomeController extends Controller
         return redirect()->route('allPosts');
     }
     public function edit_user_post($id){
-        $post = Post::findOrFail($id);
-        return view('layouts.Front.user.edit_user_post', compact('post'));
-    }
-    public function update_user_post(Request $request , $id){
-        $posts = Post::findOrFail($id);
-        $posts->title = $request->title;
-        $posts->description = $request->description;
-
-        $image = $request->image;
-        if($image){ //---Error 1
-            $imageName = time() . '.' . $image->getClientOriginalExtension();
-            $image->move('postImages', $imageName);
-            $posts->image = $imageName;
-        }
-
-        $posts->save();
-
-        return redirect()->back();
+        return view('edit_user_post')
     }
 }

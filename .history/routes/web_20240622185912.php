@@ -25,8 +25,7 @@ Route::post('user_post', [HomeController::class, 'user_post'])->middleware('auth
 Route::get('user_allPosts', [HomeController::class, 'user_allPosts'])->middleware('auth')->name('allPosts');
 Route::get('user_onePost/{id}', [HomeController::class, 'user_onePost'])->middleware('auth');
 Route::delete('delete_user_post/{id}', [HomeController::class, 'delete_user_post'])->middleware('auth');
-Route::get('edit_user_post/{id}', [HomeController::class, 'edit_user_post'])->middleware('auth');
-Route::post('update_user_post/{id}', [HomeController::class, 'update_user_post'])->middleware('auth');
+Route::get('edit_user_post/{id}', [HomeController::class, 'edit_user_post']);
 
 
 

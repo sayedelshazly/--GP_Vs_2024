@@ -97,6 +97,6 @@ class HomeController extends Controller
 
         $posts->save();
 
-        return redirect()->back();
+        return redirect()->back()->with('message', 'Updated Successfully');
     }
 }

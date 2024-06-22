@@ -39,7 +39,7 @@
                                 @method('DELETE')
                                 <button type="submit">Delete</button>
                             </form>
-                            <a href="{{url('edit_user_post', $post->id)}}" class="btn btn-gray">Edit</a>
+                            <a href="{{url('edit_user_post', $post->id)}}" class="">Edit</a>
                         </div>
                     </div>
                 </div><!-- End Service Item -->
