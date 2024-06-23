@@ -58,7 +58,6 @@ Route::get('show_category', [AdminController::class, 'show_category']);
 // Route::get('delete_cat/{id}', [AdminController::class, 'delete_cat']);
 Route::delete('delete_cat/{id}', [AdminController::class, 'delete_cat']);
 Route::get('edit_cat/{id}', [AdminController::class, 'edit_cat']);
-Route::post('update_cat/{id}', [AdminController::class, 'update_cat']);
 
 
 

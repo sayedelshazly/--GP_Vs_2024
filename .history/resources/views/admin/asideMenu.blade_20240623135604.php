@@ -85,13 +85,13 @@
             </a>
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="{{url('create_cat')}}" class="menu-link">
+                    <a href="{{url('post_page')}}" class="menu-link">
                         <div data-i18n="Account">Create</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="#" class="menu-link">
-                        <div data-i18n="Notifications">Categories</div>
+                    <a href="{{url('show_posts')}}" class="menu-link">
+                        <div data-i18n="Notifications">Ca</div>
                     </a>
                 </li>
                 

@@ -107,11 +107,7 @@ class AdminController extends Controller
         $cat = Category::findOrFail($id);
         return view('admin.categories.edit_cat', compact('cat'));
     }
-    public function update_cat(Request $request, $id){
-        $cat = Category::findOrFail($id);
-        $cat->category_name = $request->category_name;
-        $cat->save();
-        return redirect()->back() ;
-
+    public function update_cat(Request $request){
+        $cat = Category::findOrFail($id)
     }
 }

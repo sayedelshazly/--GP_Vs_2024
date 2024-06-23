@@ -109,9 +109,5 @@ class AdminController extends Controller
     }
     public function update_cat(Request $request, $id){
         $cat = Category::findOrFail($id);
-        $cat->category_name = $request->category_name;
-        $cat->save();
-        return redirect()->back() ;
-
     }
 }

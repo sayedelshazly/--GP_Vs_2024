@@ -84,7 +84,6 @@ class AdminController extends Controller
 
     // Category Work
     public function create_cat(){
-        $cat = Category::all();
         return view('admin.categories.create_cat', compact('cat'));
     }
     public function add_category(Request $request){
@@ -97,21 +96,5 @@ class AdminController extends Controller
     public function show_category(){
         $cat = Category::all();
         return view('admin.categories.create_cat', compact('cat'));
-    }
-    public function delete_cat($id){
-        $cat = Category::where('id', $id)->delete();
-        // $cat = Category::findOrFail($id)->delete();
-        return redirect()->back() ;
-    }
-    public function edit_cat($id){
-        $cat = Category::findOrFail($id);
-        return view('admin.categories.edit_cat', compact('cat'));
-    }
-    public function update_cat(Request $request, $id){
-        $cat = Category::findOrFail($id);
-        $cat->category_name = $request->category_name;
-        $cat->save();
-        return redirect()->back() ;
-
     }
 }

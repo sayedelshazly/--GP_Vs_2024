@@ -111,7 +111,5 @@ class AdminController extends Controller
         $cat = Category::findOrFail($id);
         $cat->category_name = $request->category_name;
         $cat->save();
-        return redirect()->back() ;
-
     }
 }
