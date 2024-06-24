@@ -72,7 +72,7 @@ Route::get('edit_products/{id}', [AdminController::class, 'edit_products']);
 Route::post('update_products/{id}', [AdminController::class, 'update_products']);
 Route::get('search_products', [AdminController::class, 'search_products']);
 Route::get('search_posts', [AdminController::class, 'search_posts']);
-Route::get('search_categories', [AdminController::class, 'search_categories']);
+Route::get('search_cate', [AdminController::class, 'search_posts']);
 
 
 

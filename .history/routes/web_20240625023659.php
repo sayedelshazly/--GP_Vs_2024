@@ -70,9 +70,18 @@ Route::get('show_products', [AdminController::class, 'show_products']);
 Route::get('delete_products/{id}', [AdminController::class, 'delete_products']);
 Route::get('edit_products/{id}', [AdminController::class, 'edit_products']);
 Route::post('update_products/{id}', [AdminController::class, 'update_products']);
-Route::get('search_products', [AdminController::class, 'search_products']);
-Route::get('search_posts', [AdminController::class, 'search_posts']);
-Route::get('search_categories', [AdminController::class, 'search_categories']);
+Route::get('search_products', [AdminController::class, 'search_products']);<!-- Search -->
+<div class="navbar-nav align-items-center">
+    <div class="nav-item d-flex align-items-center">
+        <i class="bx bx-search fs-4 lh-0"></i>
+        <form action="{{url('search_products')}}" method="get">
+            @csrf
+            <input type="text" class="form-control border-0 shadow-none" name="search"
+                placeholder="Search..." aria-label="Search..." />
+        </form>
+    </div>
+</div>
+<!-- /Search -->
 
 
 

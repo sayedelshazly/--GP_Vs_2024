@@ -177,16 +177,4 @@ class AdminController extends Controller
         return view('admin.products.show_products', compact('product'));
         
     }
-    public function search_posts(Request $request){
-        $search = $request->search;
-        $posts = Post::where('title', 'LIKE', '%'.$search.'%')->get();
-        return view('admin.posts.show_posts', compact('posts'));
-        
-    }
-    public function search_categories(Request $request){
-        $search = $request->search;
-        $cat = Category::where('category_name', 'LIKE', '%'.$search.'%')->get();
-        return view('admin.categories.create_cat', compact('cat'));
-        
-    }
 }

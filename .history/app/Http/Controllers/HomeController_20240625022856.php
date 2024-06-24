@@ -30,7 +30,7 @@ class HomeController extends Controller
 
     public function showAllPosts(){
         $posts = Post::where('post_status', 'active')->get();
-        return view('layouts.Front.posts.allPosts', compact('posts'));
+        return view('layouts.Front.allPosts', compact('posts'));
     }
     public function home(){
         $posts = Post::latest()->take(3)->where('post_status', 'active')->get();
@@ -110,11 +110,11 @@ class HomeController extends Controller
     // }
     public function show_allProducts(){
         $product = Product::all();
-        return view('layouts.Front.products.show_allProducts', compact('product'));
+        return view('layouts.Front.show_allProducts', compact('product'));
     }
     public function show_oneProduct($id){
         $product = Product::findOrFail($id);
-        return view('layouts.Front.products.show_oneProduct', compact('product'));
+        return view('layouts.Front.show_oneProduct', compact('product'));
     }
     
 }

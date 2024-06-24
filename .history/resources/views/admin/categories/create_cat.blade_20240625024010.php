@@ -66,7 +66,7 @@
                             <div class="navbar-nav align-items-center">
                                 <div class="nav-item d-flex align-items-center">
                                     <i class="bx bx-search fs-4 lh-0"></i>
-                                    <form action="{{url('search_categories')}}" method="get">
+                                    <form action="{{url('search_products')}}" method="get">
                                         @csrf
                                         <input type="text" class="form-control border-0 shadow-none" name="search"
                                             placeholder="Search..." aria-label="Search..." />

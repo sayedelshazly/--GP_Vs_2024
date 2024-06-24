@@ -186,7 +186,7 @@ class AdminController extends Controller
     public function search_categories(Request $request){
         $search = $request->search;
         $cat = Category::where('category_name', 'LIKE', '%'.$search.'%')->get();
-        return view('admin.categories.create_cat', compact('cat'));
+        return view(, compact('cat'));
         
     }
 }

@@ -19,54 +19,43 @@
             <!-- Layout container -->
             <div class="layout-page">
                 <!-- Navbar -->
-                {{-- @include('admin.navbar') --}}
+                @if (session()->has('message'))
+                <div class="alert alert-danger d-flex justify-content-between">
+                    {{session()->get('message')}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true"></button>
+                </div>
+                @endif
+                @if (session()->has('status_accept'))
+                <div class="alert alert-success d-flex justify-content-between">
+                    {{session()->get('status_accept')}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true"></button>
+                </div>
+                @endif
+                @if (session()->has('status_reject'))
+                <div class="alert alert-secondary d-flex justify-content-between">
+                    {{session()->get('status_reject')}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true"></button>
+                </div>
+                @endif
+
+                @include('admin.navbar')
 
                 <!-- / Navbar -->
 
                 <!-- Content wrapper -->
-                <div class="content-wrapper">
+                {{-- <div class="content-wrapper"> --}}
                     <!-- Content -->
-                    {{-- @if (session('message')) --}}
-                    @if (session()->has('message'))
-                    <div class="alert alert-success d-flex justify-content-between">
-                        {{session()->get('message')}}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true"></button>
-                    </div>
-                    @endif
-                    <h1 class="text-center text-uppercase mt-5">Create new Category</h1>
+                    <h1 class="text-center text-uppercase mt-5">All Posts</h1>
 
-                    <div class="row w-75 mx-auto">
-                        <!-- Basic Layout -->
+                    <div class="row mx-5" style="margin-top: 100px">
+
                         <div class="card">
-                            <div class="card-header d-flex align-items-center justify-content-between">
-                                <h5 class="mb-0">New Category</h5>
-                                <small class="text-muted float-end">Default label</small>
-                            </div>
-                            <div class="card-body">
-                                <form action="{{url('add_category')}}" method="POST" enctype="multipart/form-data">
-                                    @csrf
-                                    <div class="row mb-3">
-                                        <label class="col-sm-2 col-form-label" for="basic-default-name">Category Name</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" name="category_name" class="form-control"
-                                                id="basic-default-name" />
-                                        </div>
-                                    </div>
-                            
-                                    <div class="row justify-content-end">
-                                        <div class="col-sm-10">
-                                            <button type="submit" class="btn btn-primary">Send</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <br><br>
-                            <h5 class="card-header">All Categories</h5>
+                            <h5 class="card-header">All Posts</h5>
                             <!-- Search -->
                             <div class="navbar-nav align-items-center">
                                 <div class="nav-item d-flex align-items-center">
                                     <i class="bx bx-search fs-4 lh-0"></i>
-                                    <form action="{{url('search_categories')}}" method="get">
+                                    <form action="{{url('search_products')}}" method="get">
                                         @csrf
                                         <input type="text" class="form-control border-0 shadow-none" name="search"
                                             placeholder="Search..." aria-label="Search..." />
@@ -78,31 +67,38 @@
                                 <table class="table align-middle">
                                     <thead>
                                         <tr>
-                                            <th>Categories</th>
+                                            <th>Title</th>
+                                            <th>Description</th>
+                                            <th>Users</th>
+                                            <th>Status</th>
+                                            <th>Images</th>
                                             <th>Actions</th>
-                                    
+                                            <th>Post Status</th>
                                         </tr>
                                     </thead>
 
-                                    @foreach ($cat as $cat)
+                                    @foreach ($posts as $post)
                                     <tbody class="table-border-bottom-0">
                                         <tr>
                                             <td>
-                                                <strong>{{$cat->category_name}}</strong>
+                                                <strong>{{$post->title}}</strong>
                                             </td>
-                                        
+                                            <td>{!!Str::limit($post->description, 30)!!}</td>
+                                            <td>
+                                                {{$post->name}}
+                                            </td>
+                                            <td><span class="badge bg-label-primary">{{$post->post_status}}</span>
+                                            </td>
+                                            <td>
+                                                <img src="postImages/{{$post->image}}" style="width: 80px;" alt="">
+                                            </td>
                                             <td class="d-flex justify-content-start">
                                                 <button class="btn btn-info">
-                                                    <a class="text-white" href="{{url('edit_cat', $cat->id)}}">
+                                                    <a class="text-white" href="{{url('edit_post', $post->id)}}">
                                                         <i class="bx bx-edit-alt me-1"></i>
                                                     </a>
                                                 </button>
-                                                {{-- <button class="btn btn-info">
-                                                    <a class="text-white" href="{{url('delete_cat', $cat->id)}}">
-                                                        <i class="bx bx-trash-alt me-1"></i>
-                                                    </a>
-                                                </button> --}}
-                                                <form action="{{url('delete_cat', $cat->id)}}" method="POST">
+                                                <form action="{{url('delete_post', $post->id)}}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger mx-2">
@@ -110,7 +106,12 @@
                                                     </button>
                                                 </form>
                                             </td>
-                                            
+                                            <td class="">
+                                                <a class="btn btn-success"
+                                                    href="{{url('accept_user_post', $post->id)}}">Accept</a>
+                                                <a class="btn btn-secondary"
+                                                    href="{{url('reject_user_post', $post->id)}}">Reject</a>
+                                            </td>
                                         </tr>
                                     </tbody>
                                     @endforeach
@@ -123,7 +124,8 @@
 
                     <!-- Overlay -->
                     <div class="layout-overlay layout-menu-toggle"></div>
-                </div>
+                    {{--
+                </div> --}}
             </div>
         </div>
         <!-- / Layout wrapper -->

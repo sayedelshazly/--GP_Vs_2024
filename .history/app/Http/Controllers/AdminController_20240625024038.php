@@ -183,10 +183,15 @@ class AdminController extends Controller
         return view('admin.posts.show_posts', compact('posts'));
         
     }
-    public function search_categories(Request $request){
+    public function  public function search_posts(Request $request){
         $search = $request->search;
-        $cat = Category::where('category_name', 'LIKE', '%'.$search.'%')->get();
-        return view('admin.categories.create_cat', compact('cat'));
+        $posts = Post::where('title', 'LIKE', '%'.$search.'%')->get();
+        return view('admin.posts.show_posts', compact('posts'));
+        
+    }(Request $request){
+        $search = $request->search;
+        $posts = Post::where('title', 'LIKE', '%'.$search.'%')->get();
+        return view('admin.posts.show_posts', compact('posts'));
         
     }
 }

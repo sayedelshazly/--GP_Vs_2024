@@ -114,7 +114,7 @@ class HomeController extends Controller
     }
     public function show_oneProduct($id){
         $product = Product::findOrFail($id);
-        return view('layouts.Front.products.show_oneProduct', compact('product'));
+        return view('layouts.Front.products.    show_oneProduct', compact('product'));
     }
     
 }
