@@ -13,7 +13,7 @@ class HomeController extends Controller
 
         if(Auth::id()){
             $posts = Post::latest()->take(3)->where('post_status', 'active')->get(); //--Error 2
-            $product = Product::latest()->take(2)->get();
+            $product = Product::latest()->take(3)->get();
             $usertype = Auth()->user()->usertype;
 
             if($usertype == 'user'){
@@ -34,7 +34,7 @@ class HomeController extends Controller
     }
     public function home(){
         $posts = Post::latest()->take(3)->where('post_status', 'active')->get();
-        $product = Product::latest()->take(2)->get();
+        $product = Product::latest()->take(3)->get();
 
         return view('layouts.Front.home', compact('posts', 'product'));
     }
@@ -104,17 +104,9 @@ class HomeController extends Controller
         return redirect()->back()->with('message', 'Post Updated Successfully!');
     }
     // products
-    // public function show_Products(){
-    //     $product = Product::all();
-    //     return view('layouts.Front.portfolio', compact('product'));
-    // }
     public function show_allProducts(){
         $product = Product::all();
-        return view('layouts.Front.show_allProducts', compact('product'));
-    }
-    public function show_oneProduct($id){
-        $product = Product::findOrFail($id);
-        return view('layouts.Front.show_oneProduct', compact('product'));
+        return view('layouts.Front.portfolio', compact('product'))
     }
     
 }

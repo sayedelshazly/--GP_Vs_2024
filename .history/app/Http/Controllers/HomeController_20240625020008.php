@@ -112,7 +112,7 @@ class HomeController extends Controller
         $product = Product::all();
         return view('layouts.Front.show_allProducts', compact('product'));
     }
-    public function show_oneProduct($id){
+    public function show_onePrshow_OneProductsoduct($id){
         $product = Product::findOrFail($id);
         return view('layouts.Front.show_oneProduct', compact('product'));
     }

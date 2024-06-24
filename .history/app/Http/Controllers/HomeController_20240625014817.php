@@ -104,17 +104,16 @@ class HomeController extends Controller
         return redirect()->back()->with('message', 'Post Updated Successfully!');
     }
     // products
-    // public function show_Products(){
-    //     $product = Product::all();
-    //     return view('layouts.Front.portfolio', compact('product'));
-    // }
-    public function show_allProducts(){
+    public function show_Products(){
         $product = Product::all();
-        return view('layouts.Front.show_allProducts', compact('product'));
+        return view('layouts.Front.portfolio', compact('product'));
     }
-    public function show_oneProduct($id){
-        $product = Product::findOrFail($id);
-        return view('layouts.Front.show_oneProduct', compact('product'));
+    public function public function show_Products(){
+        $product = Product::all();
+        return view('layouts.Front.portfolio', compact('product'));
+    }(){
+        $product = Product::all();
+        return view('layouts.Front.portfolio', compact('product'));
     }
     
 }

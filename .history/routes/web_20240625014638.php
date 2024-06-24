@@ -28,8 +28,7 @@ Route::delete('delete_user_post/{id}', [HomeController::class, 'delete_user_post
 Route::get('edit_user_post/{id}', [HomeController::class, 'edit_user_post'])->middleware('auth');
 Route::post('update_user_post/{id}', [HomeController::class, 'update_user_post'])->middleware('auth');
 Route::get('show_Products', [HomeController::class, 'show_Products'])->middleware('auth');
-Route::get('show_allProducts', [HomeController::class, 'show_allProducts'])->middleware('auth');
-Route::get('show_oneProduct/{id}', [HomeController::class, 'show_oneProduct'])->middleware('auth');
+Route::post('showAllProducts', [HomeController::class, 'showAllProducts'])->middleware('auth');
 
 
 Route::get('home', [HomeController::class, 'index'])

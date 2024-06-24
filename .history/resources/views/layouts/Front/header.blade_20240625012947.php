@@ -12,7 +12,7 @@
                 <li><a href="{{url('/')}}" class="">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#products">Products</a></li>
+                <li><a href="#portfolio">Pro</a></li>
                 <li><a href="#team">Team</a></li>
                 <li><a href="#pricing">Pricing</a></li>
                 <li class="dropdown"><a href="#"><span>Posts</span> <i

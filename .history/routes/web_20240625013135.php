@@ -27,10 +27,6 @@ Route::get('user_onePost/{id}', [HomeController::class, 'user_onePost'])->middle
 Route::delete('delete_user_post/{id}', [HomeController::class, 'delete_user_post'])->middleware('auth');
 Route::get('edit_user_post/{id}', [HomeController::class, 'edit_user_post'])->middleware('auth');
 Route::post('update_user_post/{id}', [HomeController::class, 'update_user_post'])->middleware('auth');
-Route::get('show_Products', [HomeController::class, 'show_Products'])->middleware('auth');
-Route::get('show_allProducts', [HomeController::class, 'show_allProducts'])->middleware('auth');
-Route::get('show_oneProduct/{id}', [HomeController::class, 'show_oneProduct'])->middleware('auth');
-
 
 Route::get('home', [HomeController::class, 'index'])
 ->name('home')
@@ -70,6 +66,7 @@ Route::get('show_products', [AdminController::class, 'show_products']);
 Route::get('delete_products/{id}', [AdminController::class, 'delete_products']);
 Route::get('edit_products/{id}', [AdminController::class, 'edit_products']);
 Route::post('update_products/{id}', [AdminController::class, 'update_products']);
+Route::get('search_products', [AdminController::class, 'search_products']);
 Route::get('search_products', [AdminController::class, 'search_products']);
 
 
