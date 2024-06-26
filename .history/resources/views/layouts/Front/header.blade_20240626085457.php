@@ -27,11 +27,12 @@
                 <li class="dropdown"><a href="#"><span>Roadmap</span> <i
                     class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-                <li><a href="/roadmap/page1">Roadmap 1</a></li>
-                <li><a href="/roadmap/page2">Roadmap 2</a></li>
-                <li><a href="/roadmap/page3">Roadmap 3</a></li>
-                <li><a href="/roadmap/page4">Roadmap 4</a></li>
-                <li><a href="/roadmap/page5">Roadmap 5</a></li>
+                <li><a href="{{url('showAllPosts')}}">Roadmap 1</a></li>
+                <li><a href="{{url('create_post')}}">Roadmap 2</a></li>
+                <li><a href="{{url('user_allPosts')}}">Roadmap 3</a></li>
+                <li><a href="{{url('user_allPosts')}}">Roadmap 3</a></li>
+                <li><a href="{{url('user_allPosts')}}">Roadmap 3</a></li>
+                <li><a href="#">Dropdown 4</a></li>
             </ul>
         </li>
                 <li><a href="#contact">Contact</a></li>

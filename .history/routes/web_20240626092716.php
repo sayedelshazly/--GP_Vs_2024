@@ -43,7 +43,7 @@ Route::get('/roadmap/{page}', function ($page) {
         abort(404); // إذا لم تكن الصفحة موجودة، يتم عرض خطأ 404
     }
 
-    return view('layouts.Front.roadmap.' . $page);
+    return view('layouts.Front.pages.' . $page);
 });
 
 Route::get('home', [HomeController::class, 'index'])

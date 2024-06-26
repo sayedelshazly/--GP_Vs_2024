@@ -35,15 +35,8 @@ Route::get('show_oneProduct/{id}', [HomeController::class, 'show_oneProduct'])->
 Route::get('add_toChart/{id}', [HomeController::class, 'add_toChart'])->middleware('auth');
 Route::get('myCart', [HomeController::class, 'myCart'])->middleware('auth');
 // roadmap
-
-Route::get('/roadmap/{page}', function ($page) {
-    $pages = ['page1', 'page2', 'page3', 'page4', 'page5'];
-
-    if (!in_array($page, $pages)) {
-        abort(404); // إذا لم تكن الصفحة موجودة، يتم عرض خطأ 404
-    }
-
-    return view('layouts.Front.roadmap.' . $page);
+Route::get('/roadmap', function(){
+    return view('layoutroadmap.main');
 });
 
 Route::get('home', [HomeController::class, 'index'])

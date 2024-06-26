@@ -36,14 +36,14 @@ Route::get('add_toChart/{id}', [HomeController::class, 'add_toChart'])->middlewa
 Route::get('myCart', [HomeController::class, 'myCart'])->middleware('auth');
 // roadmap
 
-Route::get('/roadmap/{page}', function ($page) {
+Route::get('/page/{page}', function ($page) {
     $pages = ['page1', 'page2', 'page3', 'page4', 'page5'];
 
     if (!in_array($page, $pages)) {
         abort(404); // إذا لم تكن الصفحة موجودة، يتم عرض خطأ 404
     }
 
-    return view('layouts.Front.roadmap.' . $page);
+    return view('layouts.Frontpages.' . $page);
 });
 
 Route::get('home', [HomeController::class, 'index'])
