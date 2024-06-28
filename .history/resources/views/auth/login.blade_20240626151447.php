@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    @include('layouts.Front.head')
-</head>
-<body>
-@include('layouts.Front.header')
 
 <x-guest-layout>
     <!-- Session Status -->
@@ -54,5 +47,3 @@
         </div>
     </form>
 </x-guest-layout>
-</body>
-</html>

@@ -109,8 +109,6 @@
                     </div>
                 </div>
             </div><!-- End Team Member -->
-            <div class="col-lg-3"></div>
-
             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
                 <div class="team-member d-flex align-items-start">
                     <div class="pic"><img src="assets/img/team/team-4.jpg" class="img-fluid" alt=""></div>
@@ -127,8 +125,6 @@
                     </div>
                 </div>
             </div><!-- End Team Member -->
-            <div class="col-lg-3"></div>
-
 
         </div>
 

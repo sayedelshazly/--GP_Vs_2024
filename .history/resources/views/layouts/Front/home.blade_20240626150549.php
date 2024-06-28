@@ -27,17 +27,17 @@
     
     @include('layouts.Front.posts.postPage')
     
-    <!-- Portfolio Section -->
+    <!-- Skills Section -->
     @include('layouts.Front.portfolio')
-    
+    @include('layouts.Front.skills')
+
     <!-- Services Section -->
     @include('layouts.Front.service')
-    
+
     <!-- Call To Action Section -->
     @include('layouts.Front.callto')
-    <!-- Skills Section -->
-    
-    @include('layouts.Front.skills')
+
+    <!-- Portfolio Section -->
 
     <!-- Team Section -->
     @include('layouts.Front.team')

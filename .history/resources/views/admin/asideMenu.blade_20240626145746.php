@@ -124,12 +124,12 @@
             <ul class="menu-sub">
                 <li class="menu-item">
                     <a href="{{url('create_product')}}" class="menu-link">
-                        <div data-i18n="Account">New Course</div>
+                        <div data-i18n="Account">New Product</div>
                     </a>
                 </li>
                 <li class="menu-item">
                     <a href="{{url('show_products')}}" class="menu-link">
-                        <div data-i18n="Notifications">All Courses</div>
+                        <div data-i18n="Notifications">Products</div>
                     </a>
                 </li>
                 

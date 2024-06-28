@@ -11,11 +11,10 @@ use Illuminate\Support\Facades\File;
 
 class AdminController extends Controller
 {
-    
+    //show posts 
     public function post_page(){
         return view('admin.posts.post_page');
     }
-    //add new Post
     public function add_post(Request $request){
 
         //users attributes

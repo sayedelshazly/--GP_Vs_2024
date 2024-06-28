@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    @include('layouts.Front.head')
+    @include('l')
 </head>
 <body>
 @include('layouts.Front.header')
 
+    
+</body>
+</html>
 <x-guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
@@ -54,5 +57,3 @@
         </div>
     </form>
 </x-guest-layout>
-</body>
-</html>

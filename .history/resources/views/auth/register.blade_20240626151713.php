@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    @include('layouts.Front.head')
+    @include('layouts.Front.header')
 
 </head>
 <body>

@@ -129,7 +129,7 @@
                 </li>
                 <li class="menu-item">
                     <a href="{{url('show_products')}}" class="menu-link">
-                        <div data-i18n="Notifications">All Courses</div>
+                        <div data-i18n="Notifications">Products</div>
                     </a>
                 </li>
                 

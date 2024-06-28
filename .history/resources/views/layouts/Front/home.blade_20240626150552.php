@@ -27,7 +27,7 @@
     
     @include('layouts.Front.posts.postPage')
     
-    <!-- Portfolio Section -->
+    <!-- Skills Section -->
     @include('layouts.Front.portfolio')
     
     <!-- Services Section -->
@@ -35,8 +35,8 @@
     
     <!-- Call To Action Section -->
     @include('layouts.Front.callto')
-    <!-- Skills Section -->
     
+    <!-- Portfolio Section -->
     @include('layouts.Front.skills')
 
     <!-- Team Section -->
