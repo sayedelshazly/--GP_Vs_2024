@@ -9,7 +9,6 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
-use Barryvdh\DomPDF\Facade\Pdf;
 
 class AdminController extends Controller
 {
@@ -206,21 +205,16 @@ class AdminController extends Controller
         
     }
     public function status_onWay($id){
-        $order = Order::findOrFail($id);
-        $order->status = 'OnTheWay';
-        $order->save();
+        $post = Order::findOrFail($id);
+        $post->status = 'OnTheWay';
+        $post->save();
         return redirect()->back()->with('status_accept', 'Order OnThe Way');
     }
     public function status_delivered($id){
-        $order = Order::findOrFail($id);
-        $order->status = 'Delivered';
-        $order->save();
+        $post = Order::findOrFail($id);
+        $post->status = 'Delivered';
+        $post->save();
         return redirect()->back()->with('status_reject', 'Order Delivered');
     }
-    // _____________________________print and download PDF
-    public function print_pdf($id){
-        $order = Order::findOrFail($id);
-        $pdf = Pdf::loadView('admin.pdf.invoice', compact('order'));
-        return $pdf->download('Order.pdf');
-    }
+    public function print_pdf()
 }

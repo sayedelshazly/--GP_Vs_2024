@@ -94,7 +94,7 @@ Route::get('show_orders', [AdminController::class, 'show_orders']);
 Route::get('search_order', [AdminController::class, 'search_order']); 
 Route::get('status_onWay/{id}', [AdminController::class, 'status_onWay']);
 Route::get('status_delivered/{id}', [AdminController::class, 'status_delivered']);
-Route::get('print_pdf/{id}', [AdminController::class, 'print_pdf']);
+Route::get('status_delivered/{id}', [AdminController::class, 'status_delivered']);
 
 
 

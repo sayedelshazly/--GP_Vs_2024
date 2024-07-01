@@ -94,7 +94,7 @@
                                                 <strong>{{$order->product->title}}</strong>
                                             </td>
                                             <td>
-                                                <img src="productImages/{{$order->product->image}}" style="width: 80px;" alt="">
+                                                <img src="postImages/{{$order->product->image}}" style="width: 80px;" alt="">
                                             </td>
                                             <td>
                                                 <strong> {{$order->user->name}} </strong>
@@ -128,9 +128,6 @@
                                                         class="text-success fs-2 bi bi-check-square-fill"></i></a>
                                                 <a class="" href="{{url('status_delivered', $order->id)}}"><i
                                                         class="text-secondary mx-3 fs-2 bi bi-x-square-fill"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="{{url('print_pdf', $order->id)}}">Print PDF</a>
                                             </td>
                                         </tr>
                                     </tbody>

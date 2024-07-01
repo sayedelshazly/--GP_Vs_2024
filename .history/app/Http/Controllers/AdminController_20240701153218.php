@@ -206,21 +206,20 @@ class AdminController extends Controller
         
     }
     public function status_onWay($id){
-        $order = Order::findOrFail($id);
-        $order->status = 'OnTheWay';
-        $order->save();
+        $post = Order::findOrFail($id);
+        $post->status = 'OnTheWay';
+        $post->save();
         return redirect()->back()->with('status_accept', 'Order OnThe Way');
     }
     public function status_delivered($id){
-        $order = Order::findOrFail($id);
-        $order->status = 'Delivered';
-        $order->save();
+        $post = Order::findOrFail($id);
+        $post->status = 'Delivered';
+        $post->save();
         return redirect()->back()->with('status_reject', 'Order Delivered');
     }
     // _____________________________print and download PDF
     public function print_pdf($id){
-        $order = Order::findOrFail($id);
-        $pdf = Pdf::loadView('admin.pdf.invoice', compact('order'));
-        return $pdf->download('Order.pdf');
+        $pdf = Pdf::loadView('admin.pdf.invoice');
+        return $pdf->download('invoice.pdf');
     }
 }
