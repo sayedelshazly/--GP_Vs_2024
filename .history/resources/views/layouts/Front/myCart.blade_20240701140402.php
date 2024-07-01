@@ -79,7 +79,7 @@
                             <img src="postImages/{{$cart->product->image}}" style="width: 80px;" alt="">
                         </td>
                         <td class="d-flex justify-content-start">
-                            <form action="{{url('delete_fromCart', $cart->id)}}" method="POST">
+                            <form action="{{url}}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger mx-2">

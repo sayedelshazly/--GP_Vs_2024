@@ -137,11 +137,6 @@ class HomeController extends Controller
         $cart = Chart::where('user_id', $user_id)->get();
         return view('layouts.Front.myCart', compact('cart'));
     }
-    public function delete_fromCart(){
-        $user_id = Auth()->user()->id;
-        $cart = Chart::where('user_id', $user_id)->delete();
-        return redirect()->back();
-    }
     public function confirm_order(Request $request){
         $name = $request->name;
         $phone = $request->phone;
@@ -162,8 +157,7 @@ class HomeController extends Controller
         }
         $cart_remove = Chart::where('user_id', $user_id)->get();
         foreach ($cart_remove as $cart_remove) {
-            $data = Chart::findOrFail($cart_remove->id);
-            $data->delete();
+            $data = Chart::findOrFail($cart_remove->id  )
         }
         return redirect()->back();
 

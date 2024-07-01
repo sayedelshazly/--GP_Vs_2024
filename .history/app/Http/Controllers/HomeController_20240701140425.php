@@ -137,10 +137,10 @@ class HomeController extends Controller
         $cart = Chart::where('user_id', $user_id)->get();
         return view('layouts.Front.myCart', compact('cart'));
     }
-    public function delete_fromCart(){
+    public function myCart(){
         $user_id = Auth()->user()->id;
-        $cart = Chart::where('user_id', $user_id)->delete();
-        return redirect()->back();
+        $cart = Chart::where('user_id', $user_id)->get();
+        return view('layouts.Front.myCart', compact('cart'));
     }
     public function confirm_order(Request $request){
         $name = $request->name;

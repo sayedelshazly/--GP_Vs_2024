@@ -34,7 +34,7 @@ Route::get('show_oneProduct/{id}', [HomeController::class, 'show_oneProduct'])->
 // Cart
 Route::get('add_toChart/{id}', [HomeController::class, 'add_toChart'])->middleware('auth');
 Route::get('myCart', [HomeController::class, 'myCart'])->middleware('auth');
-Route::delete('delete_fromCart/{id}', [HomeController::class, 'delete_fromCart'])->middleware('auth');
+Route::get('delete_fromCart/{id}', [HomeController::class, 'add_toChart'])->middleware('auth');
 Route::post('confirm_order', [HomeController::class, 'confirm_order'])->middleware('auth');
 
 Route::get('/roadmap/{page}', function ($page) {

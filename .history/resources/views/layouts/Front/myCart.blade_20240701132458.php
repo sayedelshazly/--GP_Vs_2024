@@ -18,14 +18,14 @@
             <div class="row mb-3">
                 <label class="col-sm-2 col-form-label" for="basic-default-name">Name</label>
                 <div class="col-sm-10">
-                    <input type="text" name="name" class="form-control" value="{{Auth::user()->name}}" id="basic-default-name" />
+                    <input type="text" name="title" class="form-control" value="{{Auth::user()->name}}" id="basic-default-name" />
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label class="col-sm-2 col-form-label" for="basic-default-name">Phone</label>
                 <div class="col-sm-10">
-                    <input type="text" name="phone" class="form-control" id="basic-default-name" />
+                    <input type="text" name="title" class="form-control" id="basic-default-name" />
                 </div>
             </div>
 
@@ -33,7 +33,7 @@
                 <label class="col-sm-2 col-form-label" for="basic-default-message">Address</label>
                 <div class="col-sm-10">
                     <textarea id="basic-default-message" rows="5" cols="10" class="form-control"
-                        name="address"></textarea>
+                        name="rec_address"></textarea>
                 </div>
             </div>
             
@@ -79,7 +79,7 @@
                             <img src="postImages/{{$cart->product->image}}" style="width: 80px;" alt="">
                         </td>
                         <td class="d-flex justify-content-start">
-                            <form action="{{url('delete_fromCart', $cart->id)}}" method="POST">
+                            <form action="#" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger mx-2">

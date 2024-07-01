@@ -13,27 +13,21 @@
     <main class="main">
         @include('layouts.Front.singlePage')
 
-        <form class="my-5 w-50 mx-auto" action="{{url('confirm_order')}}" method="POST" enctype="multipart/form-data">
+        <form action="{{url('user_post')}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="row mb-3">
-                <label class="col-sm-2 col-form-label" for="basic-default-name">Name</label>
+                <label class="col-sm-2 col-form-label" for="basic-default-name">Title</label>
                 <div class="col-sm-10">
-                    <input type="text" name="name" class="form-control" value="{{Auth::user()->name}}" id="basic-default-name" />
+                    <input type="text" name="title" class="form-control" id="basic-default-name" />
                 </div>
             </div>
 
-            <div class="row mb-3">
-                <label class="col-sm-2 col-form-label" for="basic-default-name">Phone</label>
-                <div class="col-sm-10">
-                    <input type="text" name="phone" class="form-control" id="basic-default-name" />
-                </div>
-            </div>
 
             <div class="row mb-3">
-                <label class="col-sm-2 col-form-label" for="basic-default-message">Address</label>
+                <label class="col-sm-2 col-form-label" for="basic-default-message">Description</label>
                 <div class="col-sm-10">
-                    <textarea id="basic-default-message" rows="5" cols="10" class="form-control"
-                        name="address"></textarea>
+                    <textarea id="basic-default-message" rows="10" cols="30" class="form-control"
+                        name="description"></textarea>
                 </div>
             </div>
             
@@ -79,7 +73,7 @@
                             <img src="postImages/{{$cart->product->image}}" style="width: 80px;" alt="">
                         </td>
                         <td class="d-flex justify-content-start">
-                            <form action="{{url('delete_fromCart', $cart->id)}}" method="POST">
+                            <form action="#" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger mx-2">
