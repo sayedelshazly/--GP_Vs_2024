@@ -23,18 +23,17 @@
 
                     <div class="col-lg-4">
                         <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-                            <h3>Product Information</h3>
+                            <h3>Post information</h3>
                             <ul>
-                                <li><strong>Price</strong>: {{$product->price}}</li>
-                                <li><strong>Category</strong>: {{ $product->category }}</li>
-                                <li><strong>Quantity</strong>: {{$product->quantity}}</li>
-                                <li><strong>Created </strong>: {{$product->created_at->diffForHumans()}}</li>
+                                <li><strong>Topic</strong>: {{$post->title}}</li>
+                                <li><strong>Post date</strong>: {{ $post->created_at->diffForHumans() }}</li>
+                                <li><strong>Created By</strong>: {{$post->name}}</li>
                             </ul>
                         </div>
                         <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-                            <h2>{{$product->title}}</h2>
+                            <h2>{{$post->title}}</h2>
                             <p>
-                                {{$product->description}}
+                                {{$post->description}}
                             </p>
                         </div>
                     </div>

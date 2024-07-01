@@ -19,15 +19,18 @@
                 @foreach ($product as $product)
 
                 <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                    <img src="productImages/{{$product->image}}" class="img-fluid" alt="">
-                    <div class="portfolio-info d-flex justify-content-start align-items-center">
-                        <h4>{{$product->title}}</h4>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <h4 class="mt-2 text-uppercase">{{$product->title}}</h4>
+                    </div>
+                    <img src="productImages/{{$product->image}}"
+                        class="img-fluid w-50 mx-auto border border-5 border-info rounded" alt="">
+                    <div class="d-flex justify-content-center align-items-center">
                         <a href="{{url('show_oneProduct', $product->id)}}" title="More Details" class="details-link"><i
-                                class="bi bi-eye-fill"></i></a>
+                                class="fs-4 bi bi-eye-fill"></i></a>
                         <a href="{{url('add_toChart', $product->id)}}" class="px-5 mx-4"><i
                                 class="fs-4 bi bi-bag-plus-fill"></i></a>
-                    </div>
                 </div><!-- End Portfolio Item -->
+                </div>
                 @endforeach
 
 

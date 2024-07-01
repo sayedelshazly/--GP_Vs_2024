@@ -18,7 +18,7 @@
                 @endif
                 @foreach ($product as $product)
 
-                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+                <div class="col-lg-3 col-md-6 portfolio-item isotope-item filter-product">
                     <img src="productImages/{{$product->image}}" class="img-fluid" alt="">
                     <div class="portfolio-info d-flex justify-content-start align-items-center">
                         <h4>{{$product->title}}</h4>

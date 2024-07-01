@@ -31,7 +31,7 @@
                                 <li><strong>Created </strong>: {{$product->created_at->diffForHumans()}}</li>
                             </ul>
                         </div>
-                        <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+                        <div class=" text-uppercase portfolio-description" data-aos="fade-up" data-aos-delay="300">
                             <h2>{{$product->title}}</h2>
                             <p>
                                 {{$product->description}}

@@ -18,8 +18,8 @@
                 @endif
                 @foreach ($product as $product)
 
-                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                    <img src="productImages/{{$product->image}}" class="img-fluid" alt="">
+                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product border border-1 w-">
+                    <img src="productImages/{{$product->image}}" class="img-fluid w-50" alt="">
                     <div class="portfolio-info d-flex justify-content-start align-items-center">
                         <h4>{{$product->title}}</h4>
                         <a href="{{url('show_oneProduct', $product->id)}}" title="More Details" class="details-link"><i

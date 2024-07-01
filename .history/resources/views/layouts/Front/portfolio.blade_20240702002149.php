@@ -19,7 +19,7 @@
                 @foreach ($product as $product)
 
                 <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                    <img src="productImages/{{$product->image}}" class="img-fluid" alt="">
+                    <img src="productImages/{{$product->image}}" class="img-fluid w-50 mx-auto border border-1" alt="">
                     <div class="portfolio-info d-flex justify-content-start align-items-center">
                         <h4>{{$product->title}}</h4>
                         <a href="{{url('show_oneProduct', $product->id)}}" title="More Details" class="details-link"><i
