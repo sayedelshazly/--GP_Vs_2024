@@ -7,7 +7,7 @@
 
 <body class="index-page">
 
-
+    
     {{--Header --}}
     @include('layouts.Front.header')
     @include('layouts.Front.singlePage')
@@ -35,8 +35,7 @@
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="basic-default-name">Title</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="title" class="form-control rounded border border-1"
-                                        id="basic-default-name" />
+                                    <input type="text" name="title" class="form-control rounded border border-1" id="basic-default-name" />
                                 </div>
                             </div>
 

@@ -7,20 +7,20 @@
 
 <body class="index-page">
 
-
     {{--Header --}}
+
     @include('layouts.Front.header')
     @include('layouts.Front.singlePage')
-    <section id="#" class="services section">
+    <section id="#" class="">
         @if (Session::has('success'))
-        <div class="alert alert-success text-center">
+        <div class="alert alert-info text-center">
             <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
             <p>{{ Session::get('success') }}</p>
         </div>
         @endif
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-            <h2>Create New Post</h2>
+            <h2>Edit Post</h2>
             <p>Read about the most important programming and web development topics</p>
         </div><!-- End Section Title -->
 
@@ -30,12 +30,13 @@
                 <!-- Basic Layout -->
                 <div class="card">
                     <div class="card-body">
-                        <form action="{{url('user_post')}}" method="POST" enctype="multipart/form-data">
+                        <form action="{{url('update_user_post', $post->id)}}" method="POST"
+                            enctype="multipart/form-data">
                             @csrf
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="basic-default-name">Title</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="title" class="form-control rounded border border-1"
+                                    <input type="text" name="title" value="{{$post->title}}" class="form-control"
                                         id="basic-default-name" />
                                 </div>
                             </div>
@@ -45,7 +46,9 @@
                                 <label class="col-sm-2 col-form-label" for="basic-default-message">Description</label>
                                 <div class="col-sm-10">
                                     <textarea id="basic-default-message" rows="10" cols="30" class="form-control"
-                                        name="description"></textarea>
+                                        name="description">
+                                        {{$post->description}}
+                                    </textarea>
                                 </div>
                             </div>
                             <div class="row mb-3">

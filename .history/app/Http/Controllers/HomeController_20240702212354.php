@@ -70,9 +70,7 @@ class HomeController extends Controller
         $post->usertype = $usertype;
         $post->post_status = 'pending';
         $post->save();
-        Session::flash('success', 'Post Created successfully!');
-
-        return redirect()->back();
+        return redirect()->back()->with('message', 'Post Created Successfully!');
     }
     public function user_allPosts(){
         $user = Auth()->user();
@@ -105,7 +103,7 @@ class HomeController extends Controller
         }
 
         $posts->save();
-        Session::flash('success', 'Post Updated successfully!');
+        Session::flash('success', 'Post  successful!');
         return redirect()->back();
     }
     // products
@@ -134,8 +132,6 @@ class HomeController extends Controller
         $chart->user_id = $user_id;
         $chart->product_id = $product_id;
         $chart->save();
-
-        Session::flash('success', 'Product Added successfully!');
         return redirect()->back();
     }
     public function myCart(){

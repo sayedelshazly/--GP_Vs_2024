@@ -134,8 +134,6 @@ class HomeController extends Controller
         $chart->user_id = $user_id;
         $chart->product_id = $product_id;
         $chart->save();
-
-        Session::flash('success', 'Product Added successfully!');
         return redirect()->back();
     }
     public function myCart(){

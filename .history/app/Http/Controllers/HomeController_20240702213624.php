@@ -70,8 +70,6 @@ class HomeController extends Controller
         $post->usertype = $usertype;
         $post->post_status = 'pending';
         $post->save();
-        Session::flash('success', 'Post Created successfully!');
-
         return redirect()->back();
     }
     public function user_allPosts(){
@@ -134,8 +132,6 @@ class HomeController extends Controller
         $chart->user_id = $user_id;
         $chart->product_id = $product_id;
         $chart->save();
-
-        Session::flash('success', 'Product Added successfully!');
         return redirect()->back();
     }
     public function myCart(){

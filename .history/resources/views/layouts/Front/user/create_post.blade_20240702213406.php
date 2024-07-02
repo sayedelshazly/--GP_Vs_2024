@@ -7,15 +7,15 @@
 
 <body class="index-page">
 
-
+    
     {{--Header --}}
     @include('layouts.Front.header')
     @include('layouts.Front.singlePage')
     <section id="#" class="services section">
-        @if (Session::has('success'))
-        <div class="alert alert-success text-center">
-            <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-            <p>{{ Session::get('success') }}</p>
+        @if (session()->has('message'))
+        <div class="alert alert-success d-flex justify-content-between">
+            {{session()->get('message')}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true"></button>
         </div>
         @endif
         <!-- Section Title -->
@@ -35,8 +35,7 @@
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="basic-default-name">Title</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="title" class="form-control rounded border border-1"
-                                        id="basic-default-name" />
+                                    <input type="text" name="title" class="form-control rounded border border-1" id="basic-default-name" />
                                 </div>
                             </div>
 
