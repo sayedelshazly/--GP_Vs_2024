@@ -94,16 +94,22 @@
                                                 <strong>{{$order->product->title}}</strong>
                                             </td>
                                             <td>
-                                                <img src="productImages/{{$order->product->image}}" style="width: 80px;" alt="">
+                                                <img src="productImages/{{$order->product->image}}" style="width: 80px;"
+                                                    alt="">
                                             </td>
                                             <td>
                                                 <strong> {{$order->user->name}} </strong>
                                             </td>
                                             <td>
                                                 @if ($order->status == 'in progress')
-                                                <span class="badge bg-label-primary"><i class="animate-spin fas fa-spinner"></i>{{$order->status}}</span>
-                                                
-                                                
+                                                <span class="badge bg-label-light"><button type="button"
+                                                        class="btn btn-primary ...">
+                                                        <i class="animate-spin fas fa-spinner"></i>
+                                                        Processing...
+                                                    </button>
+                                                    {{$order->status}}</span>
+
+
                                                 @elseif($order->status == 'OnTheWay')
                                                 <span class="badge bg-label-success">{{$order->status}}</span>
                                                 @else

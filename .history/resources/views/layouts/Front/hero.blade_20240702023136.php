@@ -2,7 +2,7 @@
 
     <div class="container">
         <div class="col-lg-3 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="200">
-            <img src="{{asset('postImages/hero-img.png')}}" class="img-fluid w-25 animated" alt="">
+            <img src="{{asset('assets/img/hero-img.png')}}" class="img-fluid w-25 animated" alt="">
         </div>
         <div class="row gy-4">
             <div class="w-75 mx-auto text-center d-flex flex-column justify-content-center" data-aos="zoom-out">
@@ -14,7 +14,12 @@
                         class="glightbox btn-watch-video d-flex align-items-center"><i
                             class="bi bi-play-circle"></i><span>Watch Video</span></a>
                 </div>
-            </div>     
+            </div>
+            
+            
+        </div>
+        <div class="col-lg-3 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="200">
+            <img src="{{asset('assets/img/hero-img.png')}}" class="img-fluid w-25 animated" alt="">
         </div>
     </div>
     
@@ -28,7 +33,6 @@
         <li class="mx-2 text-uppercase "><a class="text-light"href="#pricing">Pricing</a></li>
         <li class="mx-2 text-uppercase "><a class="text-light"href="#contact">Contact</a></li>
     </ul>
-    
     
 
 </section><!-- /Hero Section -->

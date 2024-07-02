@@ -101,7 +101,7 @@
                                             </td>
                                             <td>
                                                 @if ($order->status == 'in progress')
-                                                <span class="badge bg-label-primary"><i class="animate-spin fas fa-spinner"></i>{{$order->status}}</span>
+                                                <span class="badge bg-label-primary">{{$order->status}}</span>
                                                 
                                                 
                                                 @elseif($order->status == 'OnTheWay')

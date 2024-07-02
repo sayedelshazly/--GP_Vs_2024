@@ -2,11 +2,11 @@
 
     <div class="container">
         <div class="col-lg-3 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="200">
-            <img src="{{asset('postImages/hero-img.png')}}" class="img-fluid w-25 animated" alt="">
+            <img src="{{asset('assets/img/hero-img.png')}}" class="img-fluid w-25 animated" alt="">
         </div>
         <div class="row gy-4">
             <div class="w-75 mx-auto text-center d-flex flex-column justify-content-center" data-aos="zoom-out">
-                <p class="fs-1 text-light">Learn Programming Topics and Web development <i class="bi bi-emoji-smile"></i></p>
+                <p class="fs-1 text-light">Learn Programming Topics and Web development <i class="bi bi-emoji-smile "></i></p>
                 <p class="">We best choice to work as a software engineer and growth you knowledge</p>
                 <div class="d-flex justify-content-center">
                     <a href="#about" class="btn-get-started">Get Started</a>
@@ -15,6 +15,9 @@
                             class="bi bi-play-circle"></i><span>Watch Video</span></a>
                 </div>
             </div>     
+        </div>
+        <div class="col-lg-3 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="200">
+            <img src="{{asset('assets/img/hero-img.png')}}" class="img-fluid w-25 animated" alt="">
         </div>
     </div>
     

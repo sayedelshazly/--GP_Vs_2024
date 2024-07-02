@@ -2,7 +2,7 @@
 
     <div class="container">
         <div class="col-lg-3 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="200">
-            <img src="{{asset('postImages/hero-img.png')}}" class="img-fluid w-25 animated" alt="">
+            <i  class="bi bi-balloon-heart-fill"></i>
         </div>
         <div class="row gy-4">
             <div class="w-75 mx-auto text-center d-flex flex-column justify-content-center" data-aos="zoom-out">
@@ -15,6 +15,9 @@
                             class="bi bi-play-circle"></i><span>Watch Video</span></a>
                 </div>
             </div>     
+        </div>
+        <div class="col-lg-3 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="200">
+            <img src="{{asset('assets/img/hero-img.png')}}" class="img-fluid w-25 animated" alt="">
         </div>
     </div>
     

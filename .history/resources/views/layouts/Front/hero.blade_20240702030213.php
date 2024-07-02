@@ -16,6 +16,9 @@
                 </div>
             </div>     
         </div>
+        <div class="col-lg-3 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="200">
+            <img src="{{asset('postImages/hero-img.png')}}" class="img-fluid w-25 animated" alt="">
+        </div>
     </div>
     
     <ul class="mx-5 list-unstyled bottom-0 mb-5 d-flex mt-5 text-light rounded p-2 position-fixed" style="font-size: 15px; background-color:#37517ebb !important; z-index:1000; margin-bottom:175px !important">
