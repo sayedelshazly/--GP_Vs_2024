@@ -20,7 +20,9 @@
                                 <img src="/productImages/{{$product->image}}" alt="">
                         </div>
                     </div>
+
                     <div class="col-lg-4">
+                        
                         <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
                             
                             <h3>Product Information</h3>
@@ -36,11 +38,6 @@
                             <p>
                                 {{$product->description}}
                             </p>
-                            <br>
-                            <div class="mt-5 underline d-flex justify-content-center fw-bold" style="color: #37517e">
-                                <a href="{{url('add_toChart', $product->id)}}" class="fs-2 text-uppercase">Order Now! <i
-                                        class="fs-2 bi bi-folder-symlink-fill"></i></a>
-                            </div>
                         </div>
                     </div>
 

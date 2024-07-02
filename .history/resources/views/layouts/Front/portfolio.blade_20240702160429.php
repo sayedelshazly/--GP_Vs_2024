@@ -3,7 +3,7 @@
     <!-- Section Title -->
     <div class="container section-title" data-aos="fade-up">
         <h2>Products</h2>
-        <p>All Products That you Need</p>
+        <p>All Products </p>
     </div><!-- End Section Title -->
 
     <div class="container">

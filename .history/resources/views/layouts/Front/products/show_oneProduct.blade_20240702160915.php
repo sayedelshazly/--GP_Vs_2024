@@ -36,11 +36,11 @@
                             <p>
                                 {{$product->description}}
                             </p>
-                            <br>
-                            <div class="mt-5 underline d-flex justify-content-center fw-bold" style="color: #37517e">
-                                <a href="{{url('add_toChart', $product->id)}}" class="fs-2 text-uppercase">Order Now! <i
-                                        class="fs-2 bi bi-folder-symlink-fill"></i></a>
-                            </div>
+                            <p>
+                                <span>Byu Now</span>
+                                <a href="{{url('add_toChart', $product->id)}}"><i
+                                    class="fs-4 bi bi-bag-plus-fill"></i></a>
+                            </p>
                         </div>
                     </div>
 
