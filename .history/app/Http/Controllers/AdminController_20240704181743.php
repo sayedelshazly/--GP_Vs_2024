@@ -28,7 +28,7 @@ class AdminController extends Controller
         // $order = Order::get()->count();
         // $order_onTheWay = Order::where('status', 'onTheWay')->get()->count();
         // $order_onTheWay = Order::where('status', 'onTheWay')->get()->count();
-        return view('admin.index', compact('users', 'posts', 'products', 'cat', 'posts_active', 'posts_pending'));
+        return view('admin.index', compact('users', 'posts', 'products', 'cat', 'order', 'posts_active', 'posts_pending'));
         }
     }
     public function post_page(){

@@ -105,7 +105,7 @@
                 </div>
 
               </div>
-              {{-- orders count
+              orders count
               <div class="col-lg-3 col-md-12 col-6 mb-4">
                 <div class="card">
                   <div class="card-body">
@@ -117,7 +117,7 @@
                   </div>
                 </div>
 
-              </div> --}}
+              </div>
               {{-- orders onTheWay count --}}
               {{-- <div class="col-lg-3 col-md-12 col-6 mb-4">
                 <div class="card">

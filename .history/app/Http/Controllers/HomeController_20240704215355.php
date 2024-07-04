@@ -130,7 +130,7 @@ class HomeController extends Controller
         $user = Auth()->user();
         $user_id = $user->id;
 
-        $chart = new Cart;
+        $chart = new Chart;
         $chart->user_id = $user_id;
         $chart->product_id = $product_id;
         $chart->save();
@@ -140,12 +140,12 @@ class HomeController extends Controller
     }
     public function myCart(){
         $user_id = Auth()->user()->id;
-        $cart = Cart::where('user_id', $user_id)->get();
+        $cart = Chart::where('user_id', $user_id)->get();
         return view('layouts.Front.myCart', compact('cart'));
     }
     public function delete_fromCart(){
         $user_id = Auth()->user()->id;
-        $cart = Cart::where('user_id', $user_id)->delete();
+        $cart = Chart::where('user_id', $user_id)->delete();
         return redirect()->back();
     }
     public function confirm_order(Request $request){
@@ -154,7 +154,7 @@ class HomeController extends Controller
         $address = $request->address;
 
         $user_id = Auth::user()->id;
-        $cart = Cart::where('user_id', $user_id)->get();
+        $cart = Chart::where('user_id', $user_id)->get();
         foreach ($cart as $cart) {
             
             $order = new Order;
@@ -166,9 +166,9 @@ class HomeController extends Controller
             
             $order->save();
         }
-        $cart_remove = Cart::where('user_id', $user_id)->get();
+        $cart_remove = Chart::where('user_id', $user_id)->get();
         foreach ($cart_remove as $cart_remove) {
-            $data = Cart::findOrFail($cart_remove->id);
+            $data = Chart::findOrFail($cart_remove->id);
             $data->delete();
         }
         Session::flash('success', 'Ordered successfully!');
@@ -200,7 +200,7 @@ class HomeController extends Controller
         $address = $request->address;
 
         $user_id = Auth::user()->id;
-        $cart = Cart::where('user_id', $user_id)->get();
+        $cart = Chart::where('user_id', $user_id)->get();
         foreach ($cart as $cart) {
             
             $order = new Order;
@@ -213,10 +213,10 @@ class HomeController extends Controller
             
             $order->save();
         }
-        $cart_remove = Cart::where('user_id', $user_id)->get();
+        $cart_remove = Chart::where('user_id', $user_id)->get();
 
         foreach ($cart_remove as $cart_remove) {
-            $data = Cart::findOrFail($cart_remove->id);
+            $data = Chart::findOrFail($cart_remove->id);
             $data->delete();
         }
         Session::flash('success', 'Payment successful!');

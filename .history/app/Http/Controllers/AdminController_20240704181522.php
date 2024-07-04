@@ -16,20 +16,7 @@ use Barryvdh\DomPDF\Facade\Pdf;
 class AdminController extends Controller
 {
     public function index(){
-        if(Auth::id()){
-            $users = User::where('usertype', 'user')->get()->count();
-        $posts = Post::get()->count();
-        $posts_active = Post::where('post_status', 'active')->get()->count();
-        $posts_pending = Post::where('post_status', 'pending')->get()->count();
-
-        $products = Product::get()->count();
-        $cat = Category::get()->count();
-
-        // $order = Order::get()->count();
-        // $order_onTheWay = Order::where('status', 'onTheWay')->get()->count();
-        // $order_onTheWay = Order::where('status', 'onTheWay')->get()->count();
-        return view('admin.index', compact('users', 'posts', 'products', 'cat', 'posts_active', 'posts_pending'));
-        }
+        if(Auth::)
     }
     public function post_page(){
         return view('admin.posts.post_page');
