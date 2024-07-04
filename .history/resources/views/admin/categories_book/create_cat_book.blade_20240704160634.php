@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="../assets/"
+    data-template="vertical-menu-template-free">
+
+<head>
+    @include('admin.head')
+</head>
+
+<body>
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-content-navbar">
+        <div class="layout-container">
+            <!-- Menu -->
+
+            @include('admin.asideMenu')
+            <!-- / Menu -->
+
+            <!-- Layout container -->
+            <div class="layout-page">
+                <!-- Navbar -->
+                {{-- @include('admin.navbar') --}}
+
+                <!-- / Navbar -->
+
+                <!-- Content wrapper -->
+                <div class="content-wrapper">
+                    <!-- Content -->
+                    {{-- @if (session('message')) --}}
+                    @if (session()->has('message'))
+                    <div class="alert alert-success d-flex justify-content-between">
+                        {{session()->get('message')}}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true"></button>
+                    </div>
+                    @endif
+                    <h1 class="text-center text-uppercase mt-5">Create new Category Book</h1>
+
+                    <div class="row w-75 mx-auto">
+                        <!-- Basic Layout -->
+                        <div class="card">
+                            <div class="card-header d-flex align-items-center justify-content-between">
+                                <h5 class="mb-0">New Category Book</h5>
+                                <small class="text-muted float-end">Default label</small>
+                            </div>
+                            <div class="card-body">
+                                <form action="{{url('add_category_book')}}" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    <div class="row mb-3">
+                                        <label class="col-sm-2 col-form-label" for="basic-default-name">Category Name</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" name="category_title" class="form-control"
+                                                id="basic-default-name" />
+                                        </div>
+                                    </div>
+                            
+                                    <div class="row justify-content-end">
+                                        <div class="col-sm-10">
+                                            <button type="submit" class="btn btn-primary">Send</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <br><br>
+                            <h5 class="card-header">All Categories</h5>
+                            <!-- Search -->
+                            {{-- <div class="navbar-nav align-items-center">
+                                <div class="nav-item d-flex align-items-center">
+                                    <i class="bx bx-search fs-4 lh-0"></i>
+                                    <form action="{{url('search_categories')}}" method="get">
+                                        @csrf
+                                        <input type="text" class="form-control border-0 shadow-none" name="search"
+                                            placeholder="Search..." aria-label="Search..." />
+                                    </form>
+                                </div>
+                            </div> --}}
+                            <!-- /Search -->
+                            <div class="table-responsive text-wrap">
+                                <table class="table align-middle">
+                                    <thead>
+                                        <tr>
+                                            <th>Categories</th>
+                                            <th>Actions</th>
+                                    
+                                        </tr>
+                                    </thead>
+
+                                    @foreach ($cat_book as $cat_book)
+                                    <tbody class="table-border-bottom-0">
+                                        <tr>
+                                            <td>
+                                                <strong>{{$cat_book->category_title}}</strong>
+                                            </td>
+                                        
+                                            <td class="d-flex justify-content-start">
+                                                <button class="btn btn-info">
+                                                    <a class="text-white" href="{{url('edit_cat_book', $cat_book)}}">
+                                                        <i class="bx bx-edit-alt me-1"></i>
+                                                    </a>
+                                                </button>
+                                                {{-- <button class="btn btn-info">
+                                                    <a class="text-white" href="#">
+                                                        <i class="bx bx-trash-alt me-1"></i>
+                                                    </a>
+                                                </button> --}}
+                                                <form action="{{url('delete_cat_book', $cat_book->id)}}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger mx-2">
+                                                        <i class="bx bx-trash me-1 "></i>
+                                                    </button>
+                                                </form>
+                                            </td>
+                                            
+                                        </tr>
+                                    </tbody>
+                                    @endforeach
+                                </table>
+                            </div>
+                            <!-- Overlay -->
+                            <div class="layout-overlay layout-menu-toggle"></div>
+                        </div>
+                    </div>
+
+                    <!-- Overlay -->
+                    <div class="layout-overlay layout-menu-toggle"></div>
+                </div>
+            </div>
+        </div>
+        <!-- / Layout wrapper -->
+
+
+
+        <!-- Core JS -->
+        <!-- build:js assets/vendor/js/core.js -->
+        @include('admin.scripts')
+</body>
+
+</html>
