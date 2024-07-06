@@ -9,7 +9,6 @@
 
     {{--Header --}}
     @include('layouts.Front.header')
-    @include('layouts.Front.singlePage')
 
     <main class="main">
 
@@ -27,13 +26,14 @@
                 <p class="text-center badge text-bg-danger w-auto mx-auto">No Books available.</p>
                 @endif
 
+                @include('layouts.Front.singlePage')
 
-                @if (session()->has('success'))
+                {{-- @if (session()->has('message'))
                 <div class="alert alert-danger d-flex justify-content-between">
-                    {{session()->get('success')}}
+                    {{session()->get('message')}}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true"></button>
                 </div>
-                @endif
+                @endif --}}
 
                 @foreach ($book as $book )
 

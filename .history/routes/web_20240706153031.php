@@ -46,9 +46,7 @@ Route::controller(HomeController::class)->group(function(){
     Route::post('stripe', 'stripePost')->name('stripe.post');
 });
 // books
-Route::get('my_books', [HomeController::class, 'my_books'])->middleware('auth');
-Route::get('borrow_book/{id}', [HomeController::class, 'borrow_book'])->middleware('auth');
-
+Route::get('my_books', [HomeController::class, 'my_books']);
 
 
 Route::get('/roadmap/{page}', function ($page) {

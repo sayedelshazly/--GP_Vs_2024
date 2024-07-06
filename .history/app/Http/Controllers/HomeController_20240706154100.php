@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
-use App\Models\Borrow;
 use App\Models\Cart;
 use App\Models\Order;
 use App\Models\Post;
@@ -229,29 +228,18 @@ class HomeController extends Controller
         return view('layouts.Front.my_books', compact('book'));
     }
     public function borrow_book($id){
-        $book=Book::find($id);
-        $book_id = $id;
-        $quantity= $book->quantity;
-        
-        if( $quantity >= 1)
-        {
-            if(Auth::id()) {
-                $user_id=Auth()->user()->id;
-                Borrow::create([
-                    'user_id' => $user_id,
-                    'book_id' => $book_id,
-                    'status' => 'applied'
-                ]);
-                Session::flash('success', 'A request is sending to admin to borrow this book');
-                return redirect()->back();  
+        $book = Book::findOrFail($id);
+        $quantity = $book->quantity;
+
+        if($quantity >= 1){
+            if(Auth::id()){
+
+            }else{
+                return redirect()->route()
             }
-            else{
-                return redirect()->route('login');
-            }
-        }
-        else
-        {
-            Session::flash('success', 'Not enough book Available');
+
+        }else{
+            Session::flash('fail', 'not enough books available');
             return redirect()->back();
         }
     }

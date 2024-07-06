@@ -28,9 +28,9 @@
                 @endif
 
 
-                @if (session()->has('success'))
+                @if (session()->has('message'))
                 <div class="alert alert-danger d-flex justify-content-between">
-                    {{session()->get('success')}}
+                    {{session()->get('message')}}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true"></button>
                 </div>
                 @endif

@@ -251,7 +251,7 @@ class HomeController extends Controller
         }
         else
         {
-            Session::flash('success', 'Not enough book Available');
+            Session::flash('message', 'Not enough book Available');
             return redirect()->back();
         }
     }

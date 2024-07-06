@@ -233,7 +233,7 @@ class HomeController extends Controller
         $book_id = $id;
         $quantity= $book->quantity;
         
-        if( $quantity >= 1)
+        if( $quantity >= '1')
         {
             if(Auth::id()) {
                 $user_id=Auth()->user()->id;
@@ -242,17 +242,16 @@ class HomeController extends Controller
                     'book_id' => $book_id,
                     'status' => 'applied'
                 ]);
-                Session::flash('success', 'A request is sending to admin to borrow this book');
-                return redirect()->back();  
+                return redirect()->back()->with('message', "A request is sending to admin to borrow this book");  
             }
             else{
                 return redirect()->route('login');
             }
         }
         else
-        {
-            Session::flash('success', 'Not enough book Available');
-            return redirect()->back();
-        }
+          {
+             return redirect()->back()->with('message', "Not enough book Available");
+
+          }
     }
 }

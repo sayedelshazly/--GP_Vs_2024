@@ -46,9 +46,7 @@ Route::controller(HomeController::class)->group(function(){
     Route::post('stripe', 'stripePost')->name('stripe.post');
 });
 // books
-Route::get('my_books', [HomeController::class, 'my_books'])->middleware('auth');
-Route::get('borrow_book/{id}', [HomeController::class, 'borrow_book'])->middleware('auth');
-
+Route::get('my_books', [HomeController::class, 'my_books']);
 
 
 Route::get('/roadmap/{page}', function ($page) {
@@ -126,6 +124,7 @@ Route::get('show_books', [AdminController::class, 'show_books']);
 Route::delete('delete_book/{id}', [AdminController::class, 'delete_book']);
 Route::get('edit_book/{id}', [AdminController::class, 'edit_book']);
 Route::post('update_book/{id}', [AdminController::class, 'update_book']);
-
+Route::post('update_book/{id}', [AdminController::class, 'update_book']);
+borrow_book
 
 require __DIR__.'/auth.php';

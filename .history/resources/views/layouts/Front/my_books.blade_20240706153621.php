@@ -9,10 +9,15 @@
 
     {{--Header --}}
     @include('layouts.Front.header')
-    @include('layouts.Front.singlePage')
 
     <main class="main">
-
+        @include('layouts.Front.singlePage')
+        @if (session()->has('fail'))
+        <div class="alert alert-success d-flex justify-content-between">
+            {{session()->get('fail')}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true"></button>
+        </div>
+        @endif
 
 
         <!-- Section Title -->
@@ -25,14 +30,6 @@
             <div class="row gy-4">
                 @if($book->isEmpty())
                 <p class="text-center badge text-bg-danger w-auto mx-auto">No Books available.</p>
-                @endif
-
-
-                @if (session()->has('success'))
-                <div class="alert alert-danger d-flex justify-content-between">
-                    {{session()->get('success')}}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true"></button>
-                </div>
                 @endif
 
                 @foreach ($book as $book )

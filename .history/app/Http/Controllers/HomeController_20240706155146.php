@@ -242,8 +242,7 @@ class HomeController extends Controller
                     'book_id' => $book_id,
                     'status' => 'applied'
                 ]);
-                Session::flash('success', 'A request is sending to admin to borrow this book');
-                return redirect()->back();  
+                return redirect()->back()->with('message', "A request is sending to admin to borrow this book");  
             }
             else{
                 return redirect()->route('login');
@@ -251,8 +250,7 @@ class HomeController extends Controller
         }
         else
         {
-            Session::flash('success', 'Not enough book Available');
-            return redirect()->back();
+            return redirect()->back()->with('message', "Not enough book Available");
         }
     }
 }

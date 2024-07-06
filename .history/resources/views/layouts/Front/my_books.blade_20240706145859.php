@@ -7,12 +7,11 @@
 
 <body class="index-page">
 
-    {{--Header --}}
-    @include('layouts.Front.header')
+{{--Header --}}
+@include('layouts.Front.header')
+
+<main class="main">
     @include('layouts.Front.singlePage')
-
-    <main class="main">
-
 
 
         <!-- Section Title -->
@@ -20,47 +19,35 @@
             <h2>Books</h2>
             <p>Read about the most important programming and web development topics</p>
         </div><!-- End Section Title -->
-
+    
         <div class="container">
             <div class="row gy-4">
                 @if($book->isEmpty())
                 <p class="text-center badge text-bg-danger w-auto mx-auto">No Books available.</p>
                 @endif
-
-
-                @if (session()->has('success'))
-                <div class="alert alert-danger d-flex justify-content-between">
-                    {{session()->get('success')}}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true"></button>
-                </div>
-                @endif
-
+    
                 @foreach ($book as $book )
-
-                <div class="col-xl-2 col-md-6 d-flex rounded my-5" data-aos="fade-up" style="width: 300px"
-                    data-aos-delay="100">
+    
+                <div class="col-xl-1 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
                     <div class="card">
                         <img class="card-img-top" src="bookImages/{{$book->book_img}}" alt="Card image cap" />
-
-                        <div class="card-body">
-                            <h2 class="card-title mx-3 text-uppercase">{{$book->title_book}}</h2>
-                            <span class=" mx-3">By : {{$book->author_name}}</span>
-                            <a class="mx-3" href="{{url('borrow_book', $book->id)}}">Borrow</a>
+                        <div class="card-body d-flex justify-content-between align-items-center">
+                            <h5 class="card-title">{{$book->title_book}}</h5>
+                            {{-- <a class="mx-3" href="{{url('showOnePost', $post->id)}}"><i class="fs-3 bi bi-eye-fill"></i></a> --}}
                             <div class="p-2">
                                 <small class="px-2 badge text-bg-primary">${{$book->price}}</small>
                                 <small class="px-2 badge text-bg-primary">{{$book->quantity}}</small>
-                                <small class="px-2 text-primary text-bold "> {{ $book->created_at->diffForHumans()
-                                    }}</small>
+                                <small class="px-2 text-primary text-bold "> {{ $book->created_at->diffForHumans() }}</small>
                             </div>
                         </div>
+    
                     </div>
                 </div><!-- End Service Item -->
-
-
+    
                 @endforeach
-
+    
                 {{-- <div class="d-flex justify-content-center align-items-center mt-5">
-                    <a href="{{url('showAllPosts')}}" class=" text-primary ">More
+                    <a href="{{url('showAllPosts')}}" class=" text-primary ">More 
                         <i class=" bi bi-chevron-double-right"></i>
                         <i class="bi bi-chevron-double-right"></i>
                         <i class="bi bi-chevron-double-right"></i>
@@ -68,22 +55,21 @@
                 </div> --}}
             </div>
         </div>
+    
 
 
+</main>
 
-    </main>
+{{--footer--}}
+@include('layouts.Front.footer')
+<!-- Scroll Top -->
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-    {{--footer--}}
-    @include('layouts.Front.footer')
-    <!-- Scroll Top -->
-    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-            class="bi bi-arrow-up-short"></i></a>
+<!-- Preloader -->
+<div id="preloader"></div>
 
-    <!-- Preloader -->
-    <div id="preloader"></div>
-
-    {{--javascribt--}}
-    @include('layouts.Front.script')
+{{--javascribt--}}
+@include('layouts.Front.script')
 
 </body>
 

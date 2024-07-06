@@ -229,30 +229,38 @@ class HomeController extends Controller
         return view('layouts.Front.my_books', compact('book'));
     }
     public function borrow_book($id){
-        $book=Book::find($id);
+        $data=Book::find($id);
+
         $book_id = $id;
-        $quantity= $book->quantity;
+
+        $quantity_book= $data->quantity;
         
-        if( $quantity >= 1)
-        {
-            if(Auth::id()) {
+          if( $quantity_book >= '1')
+           {
+             if(Auth::id()) {
+
                 $user_id=Auth()->user()->id;
+
                 Borrow::create([
                     'user_id' => $user_id,
                     'book_id' => $book_id,
                     'status' => 'applied'
                 ]);
-                Session::flash('success', 'A request is sending to admin to borrow this book');
-                return redirect()->back();  
+
+                return redirect()->back()->with('message', "A request is sending to admin to borrow this book");  
+              
             }
+
             else{
+
                 return redirect()->route('login');
             }
-        }
-        else
-        {
-            Session::flash('success', 'Not enough book Available');
-            return redirect()->back();
-        }
+
+          }
+          else
+          {
+             return redirect()->back()->with('message', "Not enough book Available");
+
+          }
     }
 }
