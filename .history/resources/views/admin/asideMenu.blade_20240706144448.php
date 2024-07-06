@@ -109,6 +109,7 @@
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="bi bi-book-fill mx-2"></i>
+
                 <div data-i18n="Account Settings">Books</div>
             </a>
             <ul class="menu-sub">
@@ -372,7 +373,7 @@
         <!-- Misc -->
         <li class="menu-header small text-uppercase"><span class="menu-header-text">Misc</span></li>
         <li class="menu-item">
-            <a href="https://github.com/sayedelshazly/--GP_Vs_2024" target="_blank"
+            <a href="https://github.com/themeselection/sneat-html-admin-template-free/issues" target="_blank"
                 class="menu-link">
                 <i class="menu-icon tf-icons bx bx-support"></i>
                 <div data-i18n="Support">Support</div>

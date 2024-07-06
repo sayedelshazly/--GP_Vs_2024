@@ -20,8 +20,8 @@ Route::get('home', [HomeController::class, 'index'])
 ->middleware('auth');
 
 Route::get('/', [HomeController::class, 'home'] );
-Route::get('showAllPosts', [HomeController::class, 'showAllPosts'] )->middleware('auth');
-Route::get('showOnePost/{id}', [HomeController::class, 'showOnePost'] )->middleware('auth');
+Route::get('showAllPosts', [HomeController::class, 'showAllPosts'] )->middleware('a');
+Route::get('showOnePost/{id}', [HomeController::class, 'showOnePost'] );
 // user create post
 Route::get('create_post', [HomeController::class, 'create_post'])->middleware('auth');
 Route::post('user_post', [HomeController::class, 'user_post'])->middleware('auth');

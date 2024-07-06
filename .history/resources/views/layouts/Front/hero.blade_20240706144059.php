@@ -25,7 +25,7 @@
     </div>
 
     <ul class="mx-5 list-unstyled badge text-bg-info bottom-0 mb-5 d-flex mt-5 text-light rounded p-2 position-fixed"
-        style="font-size: 15px; background-color:#37517e !important; z-index:1000; margin-bottom:170px !important; margin-left:180px !important">
+        style="font-size: 15px; background-color:#37517e !important; z-index:1000; margin-bottom:170px !important; margin-left:">
         {{-- <li class="mx-2 text-uppercase "><a href="#hero">Home</a></li> --}}
         <li class="mx-2 text-uppercase "><a class="text-light" href="#about">About</a></li>
         <li class="mx-2 text-uppercase "><a class="text-light" href="#posts">Posts</a></li>
