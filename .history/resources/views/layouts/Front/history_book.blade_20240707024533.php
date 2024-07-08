@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @include('layouts.Front.head')
+</head>
+
+<body class="index-page">
+
+    {{--Header --}}
+    @include('layouts.Front.header')
+
+    <main class="main">
+        @include('layouts.Front.singlePage')
+
+        <div class="container w-50 mx-auto p-2 my-5">
+            <div class="card shadow-1-strong" style="background-color: #37517e;">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Book Name</th>
+                                    <th>Book Author</th>
+                                    <th>Book Status</th>
+                                    <th>Image</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($borrow as $borrow )
+                            <tbody class="table-border-bottom-0">
+                                <tr>
+                                    <td>
+                                        <strong>{{$borrow->book->title_book}}</strong>
+                                    </td>
+                                    <td>
+                                        <strong>{{$borrow->book->author_name}}</strong>
+                                    </td>
+                                    <td>
+                                        {{$borrow->book->sa}}
+                                    </td>
+                                    <td>
+                                        {{$order->product->category}}
+                                    </td>
+                                    <td>
+                                        <img src="productImages/{{$order->product->image}}" style="width: 80px;" alt="">
+                                    </td>
+                                </tr>
+                            </tbody>
+                            @endforeach
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+    </main>
+
+    {{--footer--}}
+    @include('layouts.Front.footer')
+
+
+    {{--javascribt--}}
+    @include('layouts.Front.script')
+
+</body>
+
+</html>
